@@ -1,0 +1,22 @@
+group 'com.github.k24'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    compile 'com.squareup.retrofit2:retrofit:2.2.0'
+    compile 'com.google.code.findbugs:jsr305:3.0.1'
+    compile 'com.github.k24.deferred:deferred:1.0.0'
+
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.assertj:assertj-core:2.6.0'
+    testCompile 'com.squareup.okhttp3:mockwebserver:3.6.0'
+    testCompile 'com.github.k24.deferred:deferred-rxjava2:1.0.0'
+}
