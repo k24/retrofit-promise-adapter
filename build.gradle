@@ -20,3 +20,20 @@ dependencies {
     testCompile 'com.squareup.okhttp3:mockwebserver:3.6.0'
     testCompile 'com.github.k24.deferred:deferred-rxjava2:1.0.0'
 }
+
+apply plugin: 'maven'
+
+task sourcesJar(type: Jar, dependsOn:classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn:javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives sourcesJar
+    archives javadocJar
+}
